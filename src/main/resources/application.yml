@@ -1,1 +1,8 @@
-
+spring:
+  profiles: default
+  data:
+    mongodb:
+      database: akka-actors
+      authenticationDatabase: admin
+      host: localhost
+      maxActive: 1

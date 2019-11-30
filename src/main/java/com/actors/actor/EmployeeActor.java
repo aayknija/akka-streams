@@ -11,13 +11,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-public class Employee extends AbstractActor {
+public class EmployeeActor extends AbstractActor {
 
     @Autowired
     private EmployeeRepository employeeRepository;
 
     @Data
-   public static final class EmployeeRequest {
+    public static final class Employee {
         @Id
         private String id;
         private String firstName;
@@ -27,11 +27,11 @@ public class Employee extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(EmployeeRequest.class,employeeRequest -> addEmployee(employeeRequest))
+                .match(Employee.class, employee -> addEmployee(employee))
                 .build();
     }
-    private EmployeeRequest addEmployee(EmployeeRequest employeeRequest){
-        employeeRepository.save(employeeRequest);
-        return employeeRequest;
+    private Employee addEmployee(Employee employee){
+        employeeRepository.save(employee);
+        return employee;
     }
 }

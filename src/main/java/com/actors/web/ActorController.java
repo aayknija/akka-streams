@@ -1,6 +1,6 @@
 package com.actors.web;
 
-import com.actors.service.ActorService;
+import com.actors.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class ActorController {
 
     @Autowired
-    private ActorService actorService;
+    private EmployeeService employeeService;
 
-    @PostMapping
-    public void uploadFiles(@RequestParam("fileURL") String fileURL){
-        actorService.uploadFile(fileURL);
+    @PostMapping("/example")
+    public void uploadEmployees(@RequestParam("fileURL") String fileURL) throws Exception {
+        employeeService.uploadEmployees(fileURL);
     }
 }

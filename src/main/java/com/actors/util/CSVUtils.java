@@ -1,4 +1,4 @@
-package com.bayview.user.autodial.utils;
+package com.actors.util;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.DeserializationFeature;
