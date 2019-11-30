@@ -12,7 +12,7 @@ public class ActorController {
     @Autowired
     private EmployeeService employeeService;
 
-    @PostMapping("/example")
+    @PostMapping("/upload")
     public void uploadEmployees(@RequestParam("fileURL") String fileURL) throws Exception {
         employeeService.uploadEmployees(fileURL);
     }
